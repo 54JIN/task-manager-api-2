@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "npm install --prefix task-manager-front && npm run build --prefix task-manager-front",
     "start": "node src/index.js",
     "dev": "./node_modules/.bin/env-cmd -f ./config/.env nodemon src/index.js",
     "test": "./node_modules/.bin/env-cmd -f ./config/test.env jest --watch --runInBand"
