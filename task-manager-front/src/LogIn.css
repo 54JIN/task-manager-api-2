@@ -1,0 +1,111 @@
+.LogIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.LogIn-Wrapper {
+    width: 96vw;
+    height: 95vh;
+    background-color: #F3F3F3;
+    border-top-left-radius: 0.5vw;
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 0.5vw;
+    border-bottom-left-radius: 2vw;
+}
+
+.LogIn-Header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.5vw;
+    padding-right: 3.5vw;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.LogIn-Header h1 {
+    font-size: 1.66vw;
+    font-weight: 100;
+    color: #0762A5;
+}
+
+.LogIn-Form {
+    width: 96vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LogIn-Form-Wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    height: 14.4vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    background-color: #154175;
+}
+
+.LogIn-Form-Title {
+    border-bottom: thin solid white;
+    width: 20vw;
+}
+
+.LogIn-Form-Title h1 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.66vw;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 1vw;
+}
+
+.LogIn-Form-Input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 7.6vw;
+}
+
+.LogIn-Form-Input input {
+    border: none;
+    width: 19vw;
+    height: 2.9vw;
+    padding-left: 1vw;
+}
+
+.LogIn-Form-Input input::placeholder {
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 1.1vw;
+}
+
+.LogIn-Form-Input input[type="text"] {
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 1.1vw;
+}
+
+.LogIn-Form-Submit {
+    display: flex;
+    justify-content: space-between;
+    width: 20vw;
+}
+
+.LogIn-Form-Submit button {
+    width: 9vw;
+    height: 2.6vw;
+    border: thin solid white;
+    background: none;
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 1.5vw;
+    cursor: pointer;
+}

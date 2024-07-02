@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 import './App.css';
 
-import LogIn from './LogIn'
-import Home from './Home'
-
 function App() {
   const navigate = useNavigate();
 
@@ -20,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      {window.localStorage.getItem("token")? <Home /> : <LogIn />}
+      
     </div>
   );
 }

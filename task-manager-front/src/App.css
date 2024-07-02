@@ -1,0 +1,11 @@
+body {
+    background-color: #0B4B79;
+}
+
+.App {
+    background-color: #F3F3F3;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
