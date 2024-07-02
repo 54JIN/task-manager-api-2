@@ -1,13 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+//NPM Dev dependencies
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import App from './App';
+import SignUp from './SignUp';
+import LogIn from './LogIn';
+import Home from './Home';
+
+const router = createBrowserRouter([
+  //Page Objects
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <div>404 Not Found</div>
+  },
+  {
+    path: '/signup',
+    element: <SignUp />,
+    errorElement: <div>404 Not Found</div>
+  },
+  {
+    path: '/login',
+    element: <LogIn />,
+    errorElement: <div>404 Not Found</div>
+  },
+  {
+    path: '/home',
+    element: <Home />,
+    errorElement: <div>404 Not Found</div>
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router= {router} />
   </React.StrictMode>
 );
 
