@@ -26,6 +26,7 @@ function LogIn() {
             });
             
             window.localStorage.setItem("token", JSON.stringify(response.data.token))
+            window.localStorage.setItem("name", JSON.stringify(response.data.user.name))
             navigate('/home')
         } catch (e) {
             console.log(e.data)
@@ -37,7 +38,6 @@ function LogIn() {
             <div className='LogIn-Wrapper'>
                 <div className='LogIn-Header'>
                     <h1>Task.Manager</h1>
-                    <h1>92° Sunny</h1>
                 </div>
                 <div className='LogIn-Form'>
                     <div className='LogIn-Form-Wrapper'>

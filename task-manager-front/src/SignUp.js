@@ -25,6 +25,7 @@ function SignUp() {
             });
             
             window.localStorage.setItem("token", JSON.stringify(response.data.token))
+            window.localStorage.setItem("name", JSON.stringify(response.data.user.name))
             navigate('/home')
         } catch (e) {
             console.log(e.data)

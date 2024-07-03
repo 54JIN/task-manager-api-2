@@ -1,3 +1,7 @@
+.Display-Off {
+    display: none;
+}
+
 .Home {
     display: flex;
     justify-content: center;
@@ -51,34 +55,35 @@
     background-color: #154175;
 }
 
-.Home-Content-Category-Wrapper  {
+.Home-Content-Category {
     width: 22vw;
     height: 26vw;
 }
-
-.Home-Content-Category  {
-    width: 22vw;
-    height: 12vw;
-} 
 
 .Home-Content-Category h2 {
     text-align: center;
     color: white;
     font-family:'Times New Roman', Times, serif;
-    font-size: 1.6vw;
+    font-size: 2vw;
     font-weight: 100;
     margin-top: 0.1vw;
     margin-bottom: 0.5vw;
 }
 
 .Home-Content-Category-Task {
-    width: 16vw;
+    width: 22vw;
+    height: 22.5vw;
+    overflow-y: scroll;
 }
 
-.Task-1 {
-    border-bottom: thin solid white;
-    margin-bottom: 1vw;
-    height: 14vw;
+.Home-Content-Category-Task::-webkit-scrollbar {
+    width: 10px;
+    background: #154175;
+}
+
+.Home-Content-Category-Task::-webkit-scrollbar-thumb {
+    border-radius: 10vw;
+    background: white;
 }
 
 .Home-Content-Category-Task-Content {
@@ -118,5 +123,69 @@
     font-size: 5vw;
     font-weight: 100;
     color: white;
+    cursor: pointer;
+}
+
+.Home-Create-Task {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    height: 12.4vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    background-color: #154175;
+}
+
+.Home-Create-Task h2 {
+    text-align: center;
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 2vw;
+    font-weight: 100;
+    margin-top: 0.1vw;
+    margin-bottom: 0px;
+}
+
+.Home-Create-Task-Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 9vw;
+}
+
+.Home-Create-Task input {
+    border: none;
+    width: 19vw;
+    height: 2.9vw;
+    padding-left: 1vw;
+}
+
+.Home-Create-Task input::placeholder {
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 1.1vw;
+}
+
+.Home-Create-Task input[type="text"] {
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 1.1vw;
+}
+
+.Home-Create-Task-Submit {
+    width: 20.3vw;
+}
+
+.Home-Create-Task-Submit button {
+    width: 9vw;
+    height: 2.6vw;
+    border: thin solid white;
+    background: none;
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 1.5vw;
     cursor: pointer;
 }
