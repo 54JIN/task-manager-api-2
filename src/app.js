@@ -4,6 +4,7 @@ const path = require('path')
 require('./db/mongoose')
 const userRouter = require('./routers/user')
 const taskRouter = require('./routers/task')
+const pagesRouter = require('./routers/pages')
 
 // const ORIGIN = process.env.ORIGIN
 
@@ -15,6 +16,7 @@ app.use(express.static(reactBuild))
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
+app.use(pagesRouter)
 
 app.get('/api', async(req,res) => {
     res.send({message: "Hello"})

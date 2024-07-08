@@ -1,0 +1,54 @@
+.AddTask-Content-Wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.AddTask-Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40vw;
+    height: 16vw;
+    border-radius: 2vw;
+    background-color: rgb(24,24,24);
+    color: white;
+}
+
+.AddTask-Content h3 {
+    font-size: 3vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.AddTask-Content input {
+    border-top-left-radius: 5vw;
+    border-bottom-left-radius: 5vw;
+    padding-top: 1vw;
+    padding-left: 1.5vw;
+    padding-bottom: 1vw;
+    border: none;
+}
+
+.AddTask-Content input::placeholder {
+    font-size: 1.5vw;
+}
+
+.AddTask-Content input[type='text'] {
+    font-size: 1.5vw;
+}
+
+.AddTask-Content button {
+    width: 10vw;
+    background-color: #e7fe55;
+    border: none;
+    border-top-right-radius: 5vw;
+    border-bottom-right-radius: 5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+}

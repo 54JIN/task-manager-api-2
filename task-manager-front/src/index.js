@@ -7,9 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App';
-import SignUp from './SignUp';
-import LogIn from './LogIn';
-import Home from './Home';
+import SignUp from './Pages/SignUp/SignUp';
+import LogIn from './Pages/LogIn/LogIn';
+import Home from './Pages/Home/Home';
+import AddTask from './Pages/AddTask/AddTask';
 
 const router = createBrowserRouter([
   //Page Objects
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
   {
     path: '/home',
     element: <Home />,
+    errorElement: <div>404 Not Found</div>
+  },
+  {
+    path: '/add-task',
+    element: <AddTask />,
     errorElement: <div>404 Not Found</div>
   }
 ])

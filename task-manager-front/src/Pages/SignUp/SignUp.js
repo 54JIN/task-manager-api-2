@@ -34,24 +34,18 @@ function SignUp() {
 
     return (
         <div className='SignUp'>
-            <div className='SignUp-Wrapper'>
-                <div className='SignUp-Header'>
-                    <h1>Task.Manager</h1>
-                    <h1>92° Sunny</h1>
+            <div className='SignUp-Form'>
+                <div className='SignUp-Form-Title'>
+                    <h1>Create Account</h1>
                 </div>
-                <div className='SignUp-Form'>
-                    <div className='SignUp-Form-Wrapper'>
-                        <div className='SignUp-Form-Title'>
-                            <h1>Create Account</h1>
-                        </div>
-                        <div className='SignUp-Form-Input'>
-                            <input type="text" placeholder="NAME" value={formData.name} name='name' onChange={handleChange}/>
-                            <input type="text" placeholder="USERNAME" value={formData.email} name='email' onChange={handleChange}/>
-                            <input type="text" placeholder="PASSWORD" value={formData.password} name='password' onChange={handleChange}/>
-                        </div>
-                        <div className='SignUp-Form-Submit'>
-                            <button onClick={clickHandler}>Sign Up</button>
-                        </div>
+                <div className='SignUp-Form-Content'>
+                    <div className='SignUp-Form-Input'>
+                        <input type="text" placeholder="Full Name" value={formData.name} name='name' onChange={handleChange}/>
+                        <input type="email" placeholder="Email" value={formData.email} name='email' onChange={handleChange}/>
+                        <input type="password" placeholder="Password" value={formData.password} name='password' onChange={handleChange}/>
+                    </div>
+                    <div className='SignUp-Form-Submit'>
+                        <button onClick={clickHandler}>Sign Up</button>
                     </div>
                 </div>
             </div>

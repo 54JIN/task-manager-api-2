@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
-import SignUp from './SignUp'
+import SignUp from '../SignUp/SignUp'
 
 import './LogIn.css'
 
@@ -35,21 +35,20 @@ function LogIn() {
 
     return (
         <div className='LogIn'>
-            <div className='LogIn-Wrapper'>
-                <div className='LogIn-Header'>
-                    <h1>Task.Manager</h1>
+            <div className='LogIn-Form'>
+                <div className='LogIn-Form-Title'>
+                    <h1>Task Manager</h1>
                 </div>
-                <div className='LogIn-Form'>
-                    <div className='LogIn-Form-Wrapper'>
-                        <div className='LogIn-Form-Title'>
-                            <h1>Log In</h1>
+                <div className='LogIn-Form-Content'>
+                    <div className='LogIn-Form-Input'>
+                        <input type="email" placeholder="Email" value={formData.email} name='email' onChange={handleChange}/>
+                        <input type="password" placeholder="Password" value={formData.password} name='password' onChange={handleChange}/>
+                    </div>
+                    <div className='LogIn-Form-Submit'>
+                        <div className='LogIn-Form-Submit-LogIn'>
+                            <button onClick={clickHandler}>Log In</button>
                         </div>
-                        <div className='LogIn-Form-Input'>
-                            <input type="text" placeholder="USERNAME" value={formData.email} name='email' onChange={handleChange}/>
-                            <input type="text" placeholder="PASSWORD" value={formData.password} name='password' onChange={handleChange}/>
-                        </div>
-                        <div className='LogIn-Form-Submit'>
-                            <button onClick={clickHandler}>Enter</button>
+                        <div className='LogIn-Form-Submit-SignUp'>
                             <Link key={SignUp} to='/signup' ><button>Sign Up</button></Link>
                         </div>
                     </div>

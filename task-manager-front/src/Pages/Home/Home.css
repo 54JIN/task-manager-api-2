@@ -1,0 +1,112 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+}
+
+.Home-Tasks {
+    display: flex;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    justify-content: space-between;
+}
+
+.Home-Tasks-Content-Welcome p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 1.5vw;
+}
+
+.Home-Tasks-Total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7fe55;
+    width: 11vw;
+    height: 15vw;
+    border-radius: 2vw;
+}
+
+.Home-Tasks-Total h2 {
+    font-size: 3.5vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.Home-Tasks-Total p {
+    font-size: 1w;
+}
+
+.Home-Tasks-Specifics {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(24, 24, 24);
+    width: 25vw;
+    height: 15vw;
+    border-radius: 2vw;
+}
+
+.Home-Tasks-Specifics-Information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 11vw;
+}
+
+.Home-Tasks-Specifics-Information h2 {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 3.5vw;
+}
+
+.Home-Tasks-Specifics-Information p {
+    color: white;
+    font-size: 1.7vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 2.2vw;
+}
+
+.Home-Tasks-Specifics-Redirects {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 11vw;
+}
+
+.Home-Tasks-Specifics-Redirects button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Home-Tasks-Specifics-Redirects img {
+    width: 5vw;
+    object-fit: cover;
+}
+
+.Home-Tasks-Specifics-Redirects p {
+    color: white;
+    font-size: 0.9vw;
+}
+
+.Home-Diagrams {
+    margin-top: 1.5vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.Home-Diagrams-Weekly_Stats {
+    width: 30vw;
+    height: 24vw;
+    background-color: rgb(24, 24, 24);
+    border-radius: 2vw;
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 1.5vw;
+}

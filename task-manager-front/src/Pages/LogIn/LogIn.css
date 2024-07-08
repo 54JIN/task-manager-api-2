@@ -1,0 +1,74 @@
+.LogIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.LogIn-Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 25vw;
+    height: 20vw;
+    background-color: rgb(24, 24, 24);
+    border-radius: 2.5vw;
+}
+
+.LogIn-Form-Title h1 {
+    font-size: 2vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.LogIn-Form-Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 10vw;
+}
+
+.LogIn-Form-Input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 5.3vw;
+}
+
+.LogIn-Form-Input input {
+    font-size: 1.3vw;
+    border-radius: 0.5vw;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding-left: 1vw;
+    padding-top: 0.3vw;
+    padding-bottom: 0.3vw;
+    color: black;
+    /* color: white; */
+}
+
+.LogIn-Form-Submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LogIn-Form-Submit-LogIn button {
+    background-color: #e7fe55;
+    border: none;
+    border-radius: 3vw;
+    width: 9vw;
+    height: 2.6vw;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.LogIn-Form-Submit-SignUp button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1vw;
+    cursor: pointer;
+}
