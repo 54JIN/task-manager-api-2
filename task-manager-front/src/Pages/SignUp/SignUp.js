@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+import TaskManager_Cover from '../../Assets/Images/TaskManager-Cover.jpg'
+
 import './SignUp.css'
 
 function SignUp() {
@@ -36,7 +38,9 @@ function SignUp() {
         <div className='SignUp'>
             <div className='SignUp-Form'>
                 <div className='SignUp-Form-Title'>
-                    <h1>Create Account</h1>
+                    <h1>Hello,</h1>
+                    <h1>Join Us</h1>
+                    <p>Hey, Join us to make your day more productive</p>
                 </div>
                 <div className='SignUp-Form-Content'>
                     <div className='SignUp-Form-Input'>
@@ -48,6 +52,9 @@ function SignUp() {
                         <button onClick={clickHandler}>Sign Up</button>
                     </div>
                 </div>
+            </div>
+            <div className='SignUp-Cover'>
+                <img src={TaskManager_Cover} alt='SignUp-In Display' />
             </div>
         </div>
     )

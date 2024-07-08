@@ -1,6 +1,6 @@
 .LogIn {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
     color: white;
@@ -9,35 +9,43 @@
 .LogIn-Form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 25vw;
-    height: 20vw;
+    width: 32vw;
+    height: 42vw;
+    padding-top: 7vw;
+    padding-left: 4vw;
+    padding-right: 9vw;
     background-color: rgb(24, 24, 24);
-    border-radius: 2.5vw;
 }
 
 .LogIn-Form-Title h1 {
-    font-size: 2vw;
+    font-size: 4vw;
     margin-top: 0px;
     margin-bottom: 0px;
+    color:#e7fe55;
+}
+
+.LogIn-Form-Title p {
+    font-size: 1.1vw;
+    margin-top: 1.1vw;
+    margin-bottom: 1.1vw;
 }
 
 .LogIn-Form-Content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 10vw;
+    justify-content: space-evenly;
+    height: 20vw;
 }
 
 .LogIn-Form-Input {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 5.3vw;
+    height: 10vw;
 }
 
 .LogIn-Form-Input input {
+    height: 3.3vw;
     font-size: 1.3vw;
     border-radius: 0.5vw;
     background-color: rgb(255, 255, 255);
@@ -46,7 +54,6 @@
     padding-top: 0.3vw;
     padding-bottom: 0.3vw;
     color: black;
-    /* color: white; */
 }
 
 .LogIn-Form-Submit {
@@ -59,9 +66,9 @@
     background-color: #e7fe55;
     border: none;
     border-radius: 3vw;
-    width: 9vw;
-    height: 2.6vw;
-    font-size: 1vw;
+    width: 11vw;
+    height: 3.6vw;
+    font-size: 1.2vw;
     cursor: pointer;
 }
 
@@ -69,6 +76,17 @@
     background: none;
     border: none;
     color: white;
-    font-size: 1vw;
+    font-size: 1.2vw;
     cursor: pointer;
+}
+
+.LogIn-Cover {
+    width: 45vw;
+    height: 49vw;
+}
+
+.LogIn-Cover img {
+    width: 45vw;
+    height: 49vw;
+    object-fit: cover;
 }

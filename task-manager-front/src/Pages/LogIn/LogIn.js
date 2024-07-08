@@ -4,6 +4,8 @@ import axios from 'axios'
 
 import SignUp from '../SignUp/SignUp'
 
+import TaskManager_Cover from '../../Assets/Images/TaskManager-Cover.jpg'
+
 import './LogIn.css'
 
 function LogIn() {
@@ -37,7 +39,9 @@ function LogIn() {
         <div className='LogIn'>
             <div className='LogIn-Form'>
                 <div className='LogIn-Form-Title'>
-                    <h1>Task Manager</h1>
+                    <h1>Hello,</h1>
+                    <h1>Welcome Back</h1>
+                    <p>Hey, Welcome back to a productive day</p>
                 </div>
                 <div className='LogIn-Form-Content'>
                     <div className='LogIn-Form-Input'>
@@ -53,6 +57,9 @@ function LogIn() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='LogIn-Cover'>
+                <img src={TaskManager_Cover} alt='Log-In Display' />
             </div>
         </div>
     )
