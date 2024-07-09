@@ -11,6 +11,8 @@ import './Home.css'
 
 function Home () {
     const [data, setData] = useState({totalTasks: 0, completed: 0, toDo: 0})
+    // const [tasks, setTasks] = useState([{description: 'Finish Math Homework', completed: false}, {description: 'Workout', completed: true}, {description: 'Basketball practice at 9:30 a.m', completed: true}, {description: 'Piano lesson at 2:15 p.m', completed: false}, {description: 'Eat avocado toast', completed: false}, {description: 'Gym', completed: false}])
+    const [tasks, setTasks] = useState([{description: '', completed: false}])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(false)
 
@@ -24,6 +26,14 @@ function Home () {
                     }
                 }).then((response) => {
                     setData(response.data)
+                    console.log(response.data)
+                })
+                await axios.get('/api/tasks', {
+                    headers: {
+                        Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
+                    }
+                }).then((response) => {
+                    setTasks(response.data)
                     console.log(response.data)
                 })
             } catch (e) {
@@ -128,6 +138,26 @@ function Home () {
                                 maintainAspectRatio: false,
                             }}
                         />
+                    </div>
+                    <div className='Home-Diagrams-Tasks'>
+                        <div className='Home-Diagrams-Tasks-Header'>
+                            <div className='Home-Diagrams-Tasks-Header-Title'>
+                                <h2>Tasks</h2>
+                            </div>
+                            <div className='Home-Diagrams-Tasks-Header-Filters'>
+                                <button>All</button>
+                                <button>Completed</button>
+                                <button>Incomplete</button>
+                            </div>
+                        </div>
+                        <div className='Home-Diagrams-Tasks-Content'>
+                            {tasks.map((task) => (
+                                <div className='Home-Diagrams-Tasks-Content-Task'>
+                                    <p>{task.description}</p>
+                                    <button className={`${task.completed? "Home-Diagrams-Tasks-Content-Task-Completed" : "Home-Diagrams-Tasks-Content-Task-Incomplete"}`}></button>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -98,6 +98,8 @@
     margin-top: 1.5vw;
     padding-left: 3vw;
     padding-right: 3vw;
+    display: flex;
+    justify-content: space-between;
 }
 
 .Home-Diagrams-Weekly_Stats {
@@ -109,4 +111,92 @@
     padding-left: 2vw;
     padding-right: 2vw;
     padding-bottom: 1.5vw;
+}
+
+.Home-Diagrams-Tasks {
+    width: 58vw;
+    height: 26.5vw;
+    background-color: rgb(24, 24, 24);
+    border-radius: 2vw;
+}
+
+.Home-Diagrams-Tasks-Header {
+    display: flex;
+    align-items: center;
+    height: 6vw;
+    padding-left: 3vw;
+    padding-right: 2vw;
+}
+
+.Home-Diagrams-Tasks-Header-Title h2 {
+    font-size: 2vw;
+    font-weight: 400;
+    color:#e7fe55;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.Home-Diagrams-Tasks-Header-Filters {
+    display: flex;
+    justify-content: space-between;
+    width: 28vw;
+    margin-left: 2vw;
+}
+
+.Home-Diagrams-Tasks-Header-Filters button {
+    border: solid #e7fe55;
+    border-radius: 2vw;
+    background: none;
+    color:#e7fe55;
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 1vw;
+    font-size: 1.1vw;
+    cursor: pointer;
+}
+
+.Home-Diagrams-Tasks-Content {
+    height: 18vw;
+    overflow-y: scroll;
+}
+
+.Home-Diagrams-Tasks-Content-Task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid #545454;
+    padding-left: 3vw;
+    padding-right: 2vw;
+}
+
+.Home-Diagrams-Tasks-Content::-webkit-scrollbar {
+    width: 10px;
+    background: rgb(24, 24, 24);
+}
+
+.Home-Diagrams-Tasks-Content::-webkit-scrollbar-thumb {
+    border-radius: 10vw;
+    background: white;
+}
+
+.Home-Diagrams-Tasks-Content-Task p {
+    color: white;
+}
+
+.Home-Diagrams-Tasks-Content-Task button {
+    width: 1vw;
+    height: 1vw;
+    border: none;
+    border-radius: 1vw;
+    /* background: none; */
+    cursor: pointer;
+}
+
+.Home-Diagrams-Tasks-Content-Task-Completed {
+    background-color: #e7fe55;
+}
+
+.Home-Diagrams-Tasks-Content-Task-Incomplete {
+    background-color: #545454;
 }
