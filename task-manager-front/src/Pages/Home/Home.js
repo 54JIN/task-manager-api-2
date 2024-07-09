@@ -10,7 +10,7 @@ import RedirectImg from '../../Assets/Images/Arrow.png'
 import './Home.css'
 
 function Home () {
-    const [data, setData] = useState({totalTasks: 0, completed: 0, toDo: 0})
+    const [data, setData] = useState({totalTasks: 0, completed: 0, toDo: 0, weeklyStats: [ {label: 'Monday', completed: 24, incomplete: 4}, {label: 'Tuesday', completed: 13, incomplete: 2}, {label: 'Wednesday', completed: 14, incomplete: 3}, {label: 'Thursday', completed: 6, incomplete: 1}, {label: 'Friday', completed: 12, incomplete: 3}, {label: 'Saturday', completed: 15, incomplete: 7}, {label: 'Sunday', completed: 9, incomplete: 4} ]})
     // const [tasks, setTasks] = useState([{description: 'Finish Math Homework', completed: false}, {description: 'Workout', completed: true}, {description: 'Basketball practice at 9:30 a.m', completed: true}, {description: 'Piano lesson at 2:15 p.m', completed: false}, {description: 'Eat avocado toast', completed: false}, {description: 'Gym', completed: false}])
     const [tasks, setTasks] = useState([{description: '', completed: false}])
     const [isLoading, setIsLoading] = useState(false)
@@ -155,13 +155,13 @@ function Home () {
                                 datasets: [
                                     {
                                         label: "Not Completed",
-                                        data: [4, 8, 9, 2, 3, 10, 7],
+                                        data: data.weeklyStats.map((data) => data.incomplete),
                                         backgroundColor: "rgba(255, 255, 255, 1)",
                                         borderRadius: 40
                                     },
                                     {
                                         label: "Completed",
-                                        data: [7, 6, 15, 13, 2, 12, 9],
+                                        data: data.weeklyStats.map((data) => data.completed),
                                         backgroundColor: "rgba(231, 254, 85, 1)",
                                         borderRadius: 40,
                                     },

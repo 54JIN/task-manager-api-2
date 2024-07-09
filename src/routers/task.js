@@ -2,6 +2,7 @@ const express = require('express')
 const Task = require('../models/task')
 const auth = require('../middleware/auth')
 const router = new express.Router()
+const moment = require('moment')
 
 router.post('/api/tasks', auth, async (req,res) => {
     const task = new Task({
@@ -25,6 +26,14 @@ router.get('/api/tasks', auth, async (req,res) => {
         match.completed = req.query.completed === 'true'
     }
     
+    if(req.query.weeklyTasks) {
+        match.createdAt = {
+            $gte: moment().subtract(7, 'days').toDate(),
+            $lt: moment().toDate()
+        }
+        console.log(match)
+    }
+
     if(req.query.sortBy) {
         const parts = req.query.sortBy.split(':')
         sort[parts[0]] = parts[1] === 'desc' ? -1 : 1
