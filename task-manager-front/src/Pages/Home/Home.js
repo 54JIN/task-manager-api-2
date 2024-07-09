@@ -15,6 +15,7 @@ function Home () {
     const [tasks, setTasks] = useState([{description: '', completed: false}])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(false)
+    const [taskFilter, setTaskFilter] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -45,6 +46,38 @@ function Home () {
 
         fetchData();
     }, [setData])
+
+    const clickTaskHandler = async (filter) => {
+        try{
+            if(filter === 'All'){
+                await axios.get('/api/tasks', {
+                    headers: {
+                        Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
+                    }
+                }).then((response) => {
+                    setTasks(response.data)
+                    setTaskFilter(0)
+                    console.log(response.data)
+                })
+            } else {
+                await axios.get(`/api/tasks?completed=${filter === 'Completed'? 'true' : 'false'}`, {
+                    headers: {
+                        Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
+                    }
+                }).then((response) => {
+                    if(filter === 'Completed'){
+                        setTaskFilter(1)
+                    } else {
+                        setTaskFilter(2)
+                    }
+                    setTasks(response.data)
+                    console.log(response.data)
+                })
+            }
+        } catch (e) {
+            setError(true)
+        }
+    }
 
     if(isLoading) {
         return (
@@ -145,9 +178,9 @@ function Home () {
                                 <h2>Tasks</h2>
                             </div>
                             <div className='Home-Diagrams-Tasks-Header-Filters'>
-                                <button>All</button>
-                                <button>Completed</button>
-                                <button>Incomplete</button>
+                                <button onClick={() => clickTaskHandler('All')} className={taskFilter === 0? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>All</button>
+                                <button onClick={() => clickTaskHandler('Completed')} className={taskFilter === 1? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>Completed</button>
+                                <button onClick={() => clickTaskHandler('Incomplete')} className={taskFilter === 2? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>Incomplete</button>
                             </div>
                         </div>
                         <div className='Home-Diagrams-Tasks-Content'>

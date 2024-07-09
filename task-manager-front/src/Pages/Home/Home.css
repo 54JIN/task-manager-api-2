@@ -146,14 +146,23 @@
 .Home-Diagrams-Tasks-Header-Filters button {
     border: solid #e7fe55;
     border-radius: 2vw;
-    background: none;
-    color:#e7fe55;
     padding-top: 1vw;
     padding-left: 2vw;
     padding-right: 2vw;
     padding-bottom: 1vw;
     font-size: 1.1vw;
     cursor: pointer;
+}
+
+.Home-Diagrams-Tasks-Header-Filters-Button-Active {
+    background-color: #e7fe55;
+    color:black;
+    font-weight: bold;
+}
+
+.Home-Diagrams-Tasks-Header-Filters-Button-Inactive {
+    background: none;
+    color:#e7fe55;
 }
 
 .Home-Diagrams-Tasks-Content {
