@@ -1,6 +1,7 @@
 import { Chart as ChartJS } from 'chart.js/auto' 
 import { Bar } from 'react-chartjs-2' 
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 import Header from '../../Assets/Components/Header'
@@ -19,6 +20,7 @@ function Home () {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(false)
     const [taskFilter, setTaskFilter] = useState(0)
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,6 +43,16 @@ function Home () {
                     console.log(response.data)
                 })
             } catch (e) {
+                // console.log(e)
+                if(window.localStorage.getItem('token') === null) {
+                    window.localStorage.removeItem('token')
+                    window.localStorage.removeItem('name')
+                    navigate('/login');
+                } else if(e.response.data.error) {
+                    window.localStorage.removeItem('token')
+                    window.localStorage.removeItem('name')
+                    navigate('/login');
+                }
                 setError(true)
             } finally {
                 setIsLoading(false)
