@@ -202,6 +202,13 @@
     cursor: pointer;
 }
 
+.Home-Diagrams-Tasks-Content-Task-Information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 13.5vw;
+}
+
 .Home-Diagrams-Tasks-Content-Task-Completed {
     background-color: #e7fe55;
 }

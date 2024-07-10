@@ -1,0 +1,32 @@
+.dropdown-btn {
+    display: flex;
+    width: 9vw;
+    background-color: #545454;
+    color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    border-radius: 2vw;
+    cursor: pointer;
+}
+
+.dropdown-btn p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 1vw;
+}
+
+.toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.button-open {
+    border-top-left-radius: 1vw;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 1vw;
+}

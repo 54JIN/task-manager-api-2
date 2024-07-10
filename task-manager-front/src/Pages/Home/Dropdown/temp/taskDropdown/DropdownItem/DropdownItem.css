@@ -1,0 +1,20 @@
+.dropdown-item {
+    width: 100%;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    cursor: pointer;
+}
+
+.dropdown-item p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 1vw;
+}
+
+.dropdown-item:hover {
+    background-color: black;
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+}

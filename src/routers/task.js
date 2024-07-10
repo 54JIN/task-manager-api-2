@@ -31,7 +31,6 @@ router.get('/api/tasks', auth, async (req,res) => {
             $gte: moment().subtract(7, 'days').toDate(),
             $lt: moment().toDate()
         }
-        console.log(match)
     }
 
     if(req.query.sortBy) {
@@ -73,7 +72,7 @@ router.get('/api/tasks/:id', auth, async (req,res) => {
 
 router.patch('/api/tasks/:id', auth, async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['description', 'completed']
+    const allowedUpdates = ['description', 'completed', 'priority']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if(!isValidOperation) {
