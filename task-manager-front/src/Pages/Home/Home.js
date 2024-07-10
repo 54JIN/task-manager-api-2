@@ -40,7 +40,7 @@ function Home () {
                     }
                 }).then((response) => {
                     setTasks(response.data)
-                    console.log(response.data)
+                    // console.log(response.data)
                 })
             } catch (e) {
                 // console.log(e)
@@ -132,13 +132,13 @@ function Home () {
         )
     }
 
-    if(error) {
-        return (
-            <div>
-                <h1>Something Went Wrong! Please Try again.</h1>
-            </div>
-        )
-    }   
+    // if(error) {
+    //     return (
+    //         <div>
+    //             <h1>Something Went Wrong! Please Try again.</h1>
+    //         </div>
+    //     )
+    // }   
 
     return (
         <div className='Home'>

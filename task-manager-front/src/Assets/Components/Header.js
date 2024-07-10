@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 import AddTask from '../../Pages/AddTask/AddTask'
 import Home from '../../Pages/Home/Home'
@@ -12,8 +13,30 @@ import './Header.css'
 function Header () {
     const [navActive, setNavActive] = useState(1);
 
+    const navigate = useNavigate();
+
     const handleNavClick = (num) => {
         setNavActive(num);
+    }
+
+    const clickLogOutHandler = async () => {
+        try {
+            await axios.post('/api/users/logout', 
+            {
+                
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
+                }
+            }).then(() => {
+                window.localStorage.removeItem('token')
+                window.localStorage.removeItem('name')
+                navigate('/login');
+            })
+        } catch(e) {
+            console.log(e)
+        }
     }
 
     return (
@@ -36,7 +59,7 @@ function Header () {
             </div>
             <div className='Header-Profile'>
                 <Link key={AddTask} to='/add-task' ><button><img src={AddIcon} /></button></Link>
-                <button><img src={AvatarIcon} /></button>
+                <button onClick={clickLogOutHandler}><img src={AvatarIcon} /></button>
             </div>
         </div>
     )
