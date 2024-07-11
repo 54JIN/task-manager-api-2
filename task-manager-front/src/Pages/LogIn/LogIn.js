@@ -10,6 +10,7 @@ import './LogIn.css'
 
 function LogIn() {
     const [formData, setFormData] = useState({ email: '', password: '' })
+    const [error, setError] = useState(false)
     const navigate = useNavigate()
 
     const handleChange = (evt) => {
@@ -31,7 +32,8 @@ function LogIn() {
             window.localStorage.setItem("name", JSON.stringify(response.data.user.name))
             navigate('/home')
         } catch (e) {
-            console.log(e.data)
+            setError(true)
+            console.log(e)
         } 
     }
 
@@ -45,9 +47,18 @@ function LogIn() {
                 </div>
                 <div className='LogIn-Form-Content'>
                     <div className='LogIn-Form-Input'>
-                        <input type="email" placeholder="Email" value={formData.email} name='email' onChange={handleChange}/>
-                        <input type="password" placeholder="Password" value={formData.password} name='password' onChange={handleChange}/>
+                        <div className='LogIn-Form-Input-Email'>
+                            <input type="email" placeholder="Email" value={formData.email} name='email' onChange={handleChange}/>
+                        </div>
+                        <div className={`LogIn-Form-Input-Password ${error? null : 'LogIn-Error'}`}>
+                            <input type="password" placeholder="Password" value={formData.password} name='password' onChange={handleChange}/>
+                            <div className='LogIn-Error-Content'>
+                                <p className='LogIn-Error-Star'>*</p>
+                                <p>Your email or password is incorrect</p>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div className='LogIn-Form-Submit'>
                         <div className='LogIn-Form-Submit-LogIn'>
                             <button onClick={clickHandler}>Log In</button>

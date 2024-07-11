@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 10vw;
+    height: 12vw;
 }
 
 .LogIn-Form-Input input {
@@ -54,6 +54,36 @@
     padding-top: 0.3vw;
     padding-bottom: 0.3vw;
     color: black;
+}
+
+.LogIn-Form-Input-Email {
+    display: flex;
+    flex-direction: column;
+    height:6vw;
+}
+
+.LogIn-Form-Input-Password {
+    display: flex;
+    flex-direction: column;
+    height: 6vw;
+}
+
+.LogIn-Form-Input-Password p {
+    font-size: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0px;
+}
+
+.LogIn-Error-Star {
+    color: #BC0000;
+}
+
+.LogIn-Error-Content {
+    display: flex;
+}
+
+.LogIn-Error p {
+    display: none;
 }
 
 .LogIn-Form-Submit {

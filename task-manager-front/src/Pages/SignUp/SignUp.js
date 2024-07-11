@@ -8,6 +8,7 @@ import './SignUp.css'
 
 function SignUp() {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' })
+    const [error, setError] = useState(false)
     const navigate = useNavigate()
 
     const handleChange = (evt) => {
@@ -30,7 +31,8 @@ function SignUp() {
             window.localStorage.setItem("name", JSON.stringify(response.data.user.name))
             navigate('/home')
         } catch (e) {
-            console.log(e.data)
+            setError(true)
+            console.log(e)
         } 
     }
 
@@ -46,7 +48,25 @@ function SignUp() {
                     <div className='SignUp-Form-Input'>
                         <input type="text" placeholder="Full Name" value={formData.name} name='name' onChange={handleChange}/>
                         <input type="email" placeholder="Email" value={formData.email} name='email' onChange={handleChange}/>
-                        <input type="password" placeholder="Password" value={formData.password} name='password' onChange={handleChange}/>
+                        <div className='SignUp-Form-Input-Password'>
+                            <input type="password" placeholder="Password" value={formData.password} name='password' onChange={handleChange}/>
+                            <div className={`${error? `${(formData.password.length < 7 || formData.password.includes("password")) ? 'SignUp-Form-Input-Password-Validations-Wrapper' : 'SignUp-Error-False'}` : 'SignUp-Error-False'}`}>
+                                <div className='SignUp-Form-Input-Password-Validations'>
+                                    <div className='SignUp-Form-Input-Password-Validations-Wrapper'>
+                                        <div className='SignUp-Error-Title'>
+                                            <p className='SignUp-Error-Title-Star'>*</p>
+                                            <p>Password:</p>
+                                        </div>
+                                        <ul>
+                                            {formData.password.length < 7 ?  <li>Must be 7 characters long</li> : null}
+                                            {formData.password.includes("password") ? <li>Cannot be "password"</li> : null}
+                                            {/* <li>Use at least one digit (0-9) & special characters like(# @ $ !)</li> */}
+                                            {/* <li>Use at least one lower and upper case letters (a-z)</li> */}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className='SignUp-Form-Submit'>
                         <button onClick={clickHandler}>Sign Up</button>

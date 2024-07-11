@@ -56,6 +56,50 @@
     color: black;
 }
 
+.SignUp-Form-Input-Password {
+    display: flex;
+}
+
+.SignUp-Form-Input-Password input {
+    width: 32vw;
+}
+
+.SignUp-Error-False {
+    display: none;
+}
+
+.SignUp-Form-Input-Password-Validations {
+    position: absolute; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1vw;
+    padding-top: 2vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 2vw;
+    /* width: 28.0vw; */
+    /* height: 10.9vw; */
+    background-color: black;
+    border: #e7fe55 solid 1px;
+    color: white;
+    z-index: 1;
+}
+
+.SignUp-Error-Title {
+    display: flex;
+}
+
+.SignUp-Error-Title-Star {
+    color: #BC0000;
+}
+
+.SignUp-Error-Title p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .SignUp-Form-Submit button {
     background-color: #e7fe55;
     border: none;
