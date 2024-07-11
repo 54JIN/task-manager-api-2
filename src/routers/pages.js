@@ -35,8 +35,10 @@ router.get('/api/projects', auth, async (req,res) => {
 
         delete match.completed;
         match.createdAt = {
-            $gte: moment().subtract(7, 'days').toDate(),
-            $lt: moment().toDate()
+            $gte: moment().startOf('week').add(1, 'day').toDate(),
+            $lt: moment().endOf('day').toDate()
+            // $gte: moment().subtract(7, 'days').toDate(),
+            // $lt: moment().toDate()
         }
         await req.user.populate({
             path: 'tasks',
