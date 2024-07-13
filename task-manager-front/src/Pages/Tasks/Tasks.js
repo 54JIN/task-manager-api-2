@@ -38,6 +38,11 @@ function Tasks () {
                             Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
                         }
                     }).then((response) => {
+                        const date = new Date(response.data.dueDate)
+                        const month = String(date.getMonth() + 1).padStart(2, '0')
+                        const day = String(date.getDate() + 1).padStart(2, '0')
+                        const year = date.getFullYear();
+                        response.data.dueDate = `${year}-${month}-${day}`
                         setTask(response.data)
                     })
                 }
@@ -75,6 +80,14 @@ function Tasks () {
                     }
                 }).then((res) => {
                     navigate(`/tasks/${res.data._id}`);
+                    console.log('task.dueDate')
+                    console.log(task.dueDate)
+                    const date = new Date(res.data.dueDate)
+                    const month = String(date.getMonth() + 1).padStart(2, '0')
+                    const day = String(date.getDate() + 1).padStart(2, '0')
+                    const year = date.getFullYear();
+                    res.data.dueDate = `${year}-${month}-${day}`
+                    
                     setTasks([...tasks, res.data])
                     setTask(res.data)
                 })
@@ -113,6 +126,11 @@ function Tasks () {
                     Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
                 }
             }).then((response) => {
+                const date = new Date(response.data.dueDate)
+                const month = String(date.getMonth() + 1).padStart(2, '0')
+                const day = String(date.getDate() + 1).padStart(2, '0')
+                const year = date.getFullYear();
+                response.data.dueDate = `${year}-${month}-${day}`
                 setTask(response.data)
                 navigate(`/tasks/${taskId}`)
             })
