@@ -76,6 +76,7 @@ function Tasks () {
                 }).then((res) => {
                     navigate(`/tasks/${res.data._id}`);
                     setTasks([...tasks, res.data])
+                    setTask(res.data)
                 })
             } else {
                 await axios.patch(`/api/tasks/${task._id}`, 
@@ -105,24 +106,24 @@ function Tasks () {
         setTask(temp)
     }
     
-    const clickAddNewTaskHandler = async (taskId) => {
-        if(taskId) {
-            try {
-                await axios.get(`/api/tasks/${taskId}`, {
-                    headers: {
-                        Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
-                    }
-                }).then((response) => {
-                    setTask(response.data)
-                    navigate(`/tasks/${taskId}`)
-                })
-            } catch (e) {
+    const clickTaskHandler = async (taskId) => {
+        try {
+            await axios.get(`/api/tasks/${taskId}`, {
+                headers: {
+                    Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
+                }
+            }).then((response) => {
+                setTask(response.data)
+                navigate(`/tasks/${taskId}`)
+            })
+        } catch (e) {
 
-            }
-        } else {
-            navigate(`/tasks`)
         }
-        // window.location.href = `/tasks${taskId? `/${taskId}` : ''}`
+    }
+    
+    const clickAddNewTaskHandler = async () => {
+        setTask({_id: '', title: '', description: '', dueDate: '', priority: 0})
+        navigate(`/tasks`)
     }
 
     return(
@@ -139,7 +140,7 @@ function Tasks () {
                     </div>
                     <div className='AddTask-Content-Tasks-View'>
                         {tasks.map((task) => (
-                            <div className='AddTask-Content-Tasks-View-Task' onClick={() => clickAddNewTaskHandler(task._id)}>
+                            <div className='AddTask-Content-Tasks-View-Task' onClick={() => clickTaskHandler(task._id)}>
                                 <p>{task.title}</p>
                             </div>
                         ))}
