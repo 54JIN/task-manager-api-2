@@ -149,7 +149,7 @@ function Tasks () {
         <div className='AddTask'>
             <Header navVal={2} />
             <div className='AddTask-Subtitle'>
-                <p>Welcome to Task Manager. Enjoy UserName!</p>
+                <p>Welcome to Task Manager. Enjoy {window.localStorage.getItem('name').replace('"', '').replace('"', '')}!</p>
             </div>
             <div className='AddTask-Content'>
                 <div className='AddTask-Content-Tasks'>

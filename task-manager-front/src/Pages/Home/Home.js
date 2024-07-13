@@ -137,20 +137,20 @@ function Home () {
         )
     }
 
-    // if(error) {
-    //     return (
-    //         <div>
-    //             <h1>Something Went Wrong! Please Try again.</h1>
-    //         </div>
-    //     )
-    // }   
+    if(error) {
+        return (
+            <div>
+                <h1>Something Went Wrong! Please Try again.</h1>
+            </div>
+        )
+    }   
 
     return (
         <div className='Home'>
             <Header navVal={1} />
             <div className='Home-Tasks-Content'>
                 <div className='Home-Tasks-Content-Welcome'>
-                    <p>Welcome to Task Manager. Enjoy UserName!</p>
+                    <p>Welcome to Task Manager. Enjoy {window.localStorage.getItem('name').replace('"', '').replace('"', '')}!</p>
                 </div>
                 <div className='Home-Tasks'>
                     <div className='Home-Tasks-Total'>
