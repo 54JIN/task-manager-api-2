@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
-import AddTask from '../../Pages/AddTask/AddTask'
+import Tasks from '../../Pages/Tasks/Tasks'
 import Home from '../../Pages/Home/Home'
 
 import AvatarIcon from '../Images/AvatarIcon.png'
@@ -58,7 +58,7 @@ function Header () {
                 </div>
             </div>
             <div className='Header-Profile'>
-                <Link key={AddTask} to='/add-task' ><button><img src={AddIcon} /></button></Link>
+                <Link key={Tasks} to='/tasks' ><button><img src={AddIcon} /></button></Link>
                 <button onClick={clickLogOutHandler}><img src={AvatarIcon} /></button>
             </div>
         </div>

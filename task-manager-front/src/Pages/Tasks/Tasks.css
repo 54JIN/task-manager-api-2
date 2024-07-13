@@ -1,0 +1,256 @@
+.AddTask-Content {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.AddTask-Subtitle {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5vw;
+    color: white;
+}
+
+.AddTask-Content-Tasks {
+    width: 25vw;
+    height: 43vw;
+    background-color: rgb(24,24,24);
+    border-radius: 2vw;
+}
+
+.AddTask-Content-Tasks-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 1vw;
+}
+
+.AddTask-Content-Tasks-Header h2 {
+    font-size: 2vw;
+    font-weight: 400;
+    color:#e7fe55;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.AddTask-Content-Tasks-View {
+    overflow-y: scroll;
+    height: 34.5vw;
+}
+
+.AddTask-Content-Tasks-View::-webkit-scrollbar {
+    width: 10px;
+    background: rgb(24, 24, 24);
+}
+
+.AddTask-Content-Tasks-View::-webkit-scrollbar-thumb {
+    border-radius: 10vw;
+    background: white;
+}
+
+.AddTask-Content-Tasks-View-Task {
+    border-top: solid #545454;
+    padding-left: 2vw;
+    padding-top: 1.2vw;
+    padding-bottom: 1.2vw;
+    cursor: pointer;
+}
+
+.AddTask-Content-Tasks-View-Task:hover {
+    background-color: #4f4f4f;
+}
+
+.AddTask-Content-Tasks-View-Task p {
+    font-size: 1.3vw;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.AddTask-Content-Tasks-Header button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.AddTask-Content-Tasks-Header img {
+    width: 3vw;
+    object-fit: cover;
+}
+
+.AddTask-Content-Edit {
+    display: flex;
+    flex-direction: column;
+    width: 61vw;
+    height: 43vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    background-color: rgb(24,24,24);
+    border-radius: 2vw;
+}
+
+.AddTask-Content-Edit-Title {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+}
+
+.AddTask-Content-Edit-Title input {
+    background: none;
+    border: none;
+    width: 42vw;
+    height: 4vw;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 4vw;
+    font-weight: bold;
+    color:#e7fe55;
+}
+
+.AddTask-Content-Edit-Title input::placeholder {
+    color:#e7fe55;
+    font-size: 4vw;
+}
+
+.AddTask-Content-Edit-Title input:focus {
+    outline: none;
+}
+
+.AddTask-Content-Edit-Title button {
+    background: none;
+    border: #e7fe55 solid;
+    border-radius: 2vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    color:#e7fe55;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.AddTask-Content-Edit-Details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 4vw;
+}
+
+.AddTask-Content-Edit-Details-Label {
+    width: 10vw;
+    font-size: 1.2vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #545454;
+}
+
+.AddTask-Content-Edit-Details-Date {
+    display: flex;
+    height: 1.5vw;
+}
+
+.AddTask-Content-Edit-Details-Date input {
+    background: none;
+    border: none;
+    width: 9.5vw;
+    height: 1.5vw;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.2vw;
+    font-family: sans-serif;
+    color-scheme: dark;
+    color:white;
+}
+
+.AddTask-Content-Edit-Details-Date input::placeholder {
+    font-size: 1.2vw;
+    color:white;
+}
+
+.AddTask-Content-Edit-Details-Date input:focus {
+    outline: none;
+}
+
+.AddTask-Content-Edit-Details-Priority {
+    display: flex;
+    height: 1.5vw;
+}
+
+.AddTask-Content-Edit-Description {
+    border-top: solid #545454;
+    margin-top: 1.5vw;
+    padding-top: 2vw;
+}
+
+.AddTask-Content-Edit-Description textarea {
+    width: 100%;
+    height: 22.5vw;
+    background: none;
+    border: none;
+    resize: none;
+    font-size: 1.2vw;
+    font-family: sans-serif;
+    color: white;
+}
+
+.AddTask-Content-Edit-Description textarea:focus {
+    outline: none;
+}
+
+/* .AddTask-Content-Wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.AddTask-Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40vw;
+    height: 16vw;
+    border-radius: 2vw;
+    background-color: rgb(24,24,24);
+    color: white;
+}
+
+.AddTask-Content h3 {
+    font-size: 3vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.AddTask-Content input {
+    border-top-left-radius: 5vw;
+    border-bottom-left-radius: 5vw;
+    padding-top: 1vw;
+    padding-left: 1.5vw;
+    padding-bottom: 1vw;
+    border: none;
+}
+
+.AddTask-Content input::placeholder {
+    font-size: 1.5vw;
+}
+
+.AddTask-Content input[type='text'] {
+    font-size: 1.5vw;
+}
+
+.AddTask-Content button {
+    width: 10vw;
+    background-color: #e7fe55;
+    border: none;
+    border-top-right-radius: 5vw;
+    border-bottom-right-radius: 5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+} */

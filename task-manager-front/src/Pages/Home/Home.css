@@ -122,10 +122,16 @@
 
 .Home-Diagrams-Tasks-Header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 6vw;
     padding-left: 3vw;
     padding-right: 2vw;
+}
+
+.Home-Diagrams-Tasks-Header-Left-Aligned {
+    display: flex;
+    align-items: center;
 }
 
 .Home-Diagrams-Tasks-Header-Title h2 {
@@ -163,6 +169,22 @@
 .Home-Diagrams-Tasks-Header-Filters-Button-Inactive {
     background: none;
     color:#e7fe55;
+}
+
+.Home-Diagrams-Tasks-Header-Right-Aligned {
+    display: flex;
+    align-items: center;
+}
+
+.Home-Diagrams-Tasks-Header-Right-Aligned button {
+    border: solid #e7fe55;
+    border-radius: 2vw;
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 1vw;
+    font-size: 1.1vw;
+    cursor: pointer;
 }
 
 .Home-Diagrams-Tasks-Content {

@@ -15,10 +15,11 @@ import './Home.css'
 
 function Home () {
     const [data, setData] = useState({totalTasks: 0, completed: 0, toDo: 0, weeklyStats: [ {label: 'Monday', completed: 24, incomplete: 4}, {label: 'Tuesday', completed: 13, incomplete: 2}, {label: 'Wednesday', completed: 14, incomplete: 3}, {label: 'Thursday', completed: 6, incomplete: 1}, {label: 'Friday', completed: 12, incomplete: 3}, {label: 'Saturday', completed: 15, incomplete: 7}, {label: 'Sunday', completed: 9, incomplete: 4} ]})
-    // const [tasks, setTasks] = useState([{_id: 'dasada' , description: 'Finish Math Homework', completed: false, priority: 2}, {_id: 'dasfsaa', description: 'Workout', completed: true, priority: 1}, {_id: 'dasadasdas', description: 'Basketball practice at 9:30 a.m', completed: true, priority: 1}, {_id: 'dasadffwefwea', description: 'Piano lesson at 2:15 p.m', completed: false, priority: 1}, {_id: 'dasadag3wweg', description: 'Eat avocado toast', completed: false, priority: 0}, {_id: 'dasadajtyjtyjt', description: 'Gym', completed: false, priority: 0}])
-    const [tasks, setTasks] = useState([{description: '', completed: false}])
+    const [tasks, setTasks] = useState([{_id: 'dasada' , title: 'Finish Math Homework', completed: false, priority: 2}, {_id: 'dasfsaa', title: 'Workout', completed: true, priority: 1}, {_id: 'dasadasdas', title: 'Basketball practice at 9:30 a.m', completed: true, priority: 1}, {_id: 'dasadffwefwea', title: 'Piano lesson at 2:15 p.m', completed: false, priority: 1}, {_id: 'dasadag3wweg', title: 'Eat avocado toast', completed: false, priority: 0}, {_id: 'dasadajtyjtyjt', title: 'Gym', completed: false, priority: 0}])
+    // const [tasks, setTasks] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(false)
+    const [filter, setFilter] = useState(false)
     const [taskFilter, setTaskFilter] = useState(0)
     const navigate = useNavigate();
 
@@ -123,6 +124,10 @@ function Home () {
             setError(true)
         }
     }
+    
+    const clickFilterStatusHandler = () => {
+        setFilter(!filter)
+    }
 
     if(isLoading) {
         return (
@@ -132,13 +137,13 @@ function Home () {
         )
     }
 
-    if(error) {
-        return (
-            <div>
-                <h1>Something Went Wrong! Please Try again.</h1>
-            </div>
-        )
-    }   
+    // if(error) {
+    //     return (
+    //         <div>
+    //             <h1>Something Went Wrong! Please Try again.</h1>
+    //         </div>
+    //     )
+    // }   
 
     return (
         <div className='Home'>
@@ -219,19 +224,24 @@ function Home () {
                     </div>
                     <div className='Home-Diagrams-Tasks'>
                         <div className='Home-Diagrams-Tasks-Header'>
-                            <div className='Home-Diagrams-Tasks-Header-Title'>
-                                <h2>Tasks</h2>
+                            <div className='Home-Diagrams-Tasks-Header-Left-Aligned'>
+                                <div className='Home-Diagrams-Tasks-Header-Title'>
+                                    <h2>Tasks</h2>
+                                </div>
+                                <div className='Home-Diagrams-Tasks-Header-Filters'>
+                                    <button onClick={() => clickTaskHandler('All')} className={taskFilter === 0? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>All</button>
+                                    <button onClick={() => clickTaskHandler('Completed')} className={taskFilter === 1? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>Completed</button>
+                                    <button onClick={() => clickTaskHandler('Incomplete')} className={taskFilter === 2? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>Incomplete</button>
+                                </div>
                             </div>
-                            <div className='Home-Diagrams-Tasks-Header-Filters'>
-                                <button onClick={() => clickTaskHandler('All')} className={taskFilter === 0? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>All</button>
-                                <button onClick={() => clickTaskHandler('Completed')} className={taskFilter === 1? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>Completed</button>
-                                <button onClick={() => clickTaskHandler('Incomplete')} className={taskFilter === 2? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>Incomplete</button>
+                            <div className='Home-Diagrams-Tasks-Header-Right-Aligned'>
+                                <button onClick={() => clickFilterStatusHandler()} className={filter? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>Filters</button>
                             </div>
                         </div>
                         <div className='Home-Diagrams-Tasks-Content'>
                             {tasks.map((task) => (
                                 <div key={task._id} className='Home-Diagrams-Tasks-Content-Task'>
-                                    <p>{task.description}</p>
+                                    <p>{task.title}</p>
                                     <div className='Home-Diagrams-Tasks-Content-Task-Information'>
                                         {/* <Dropdown 
                                             buttonText={task.priority === 2 ? "High" : `${task.priority === 1 ? 'Medium': 'Low'}`}

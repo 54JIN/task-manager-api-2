@@ -1,0 +1,37 @@
+.DropdownContent {
+    position: absolute;
+    z-index: 1;
+    width: 9vw;
+    background-color: rgb(24, 24, 24);
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+    border-left: solid 2px #e7fe55;
+    border-right: solid 2px #e7fe55;
+    border-bottom: solid 2px #e7fe55;
+    color: black;
+}
+
+.DropdownContent-Item {
+    cursor: pointer;
+}
+
+.DropdownContent-Item:hover {
+    background-color: rgb(78, 78, 78);
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+}
+
+.DropdownContent-Item p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 1vw;
+    font-size: 1vw;
+    color: black;
+}
+
+.Content-Closed {
+    display: none;
+}

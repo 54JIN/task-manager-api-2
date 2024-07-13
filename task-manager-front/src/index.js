@@ -10,7 +10,7 @@ import App from './App';
 import SignUp from './Pages/SignUp/SignUp';
 import LogIn from './Pages/LogIn/LogIn';
 import Home from './Pages/Home/Home';
-import AddTask from './Pages/AddTask/AddTask';
+import Tasks from './Pages/Tasks/Tasks';
 
 const router = createBrowserRouter([
   //Page Objects
@@ -35,8 +35,13 @@ const router = createBrowserRouter([
     errorElement: <div>404 Not Found</div>
   },
   {
-    path: '/add-task',
-    element: <AddTask />,
+    path: '/tasks',
+    element: <Tasks />,
+    errorElement: <div>404 Not Found</div>
+  },
+  {
+    path: '/tasks/:id',
+    element: <Tasks />,
     errorElement: <div>404 Not Found</div>
   }
 ])

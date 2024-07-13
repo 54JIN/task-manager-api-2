@@ -72,7 +72,7 @@ router.get('/api/tasks/:id', auth, async (req,res) => {
 
 router.patch('/api/tasks/:id', auth, async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['description', 'completed', 'priority']
+    const allowedUpdates = ['title', 'description', 'completed', 'dueDate', 'priority']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if(!isValidOperation) {
