@@ -6,7 +6,6 @@ import DropdownContent from '../DropdownContent/DropdownContent';
 
 function Dropdown ({ priority, clickPriorityTaskHandler }) {
     const [open, setOpen] = useState(false);
-    const [prio, setPrio] = useState(priority);
 
     const toggleDropdown = () => {
         setOpen((open) => !open);
@@ -15,13 +14,12 @@ function Dropdown ({ priority, clickPriorityTaskHandler }) {
     const clickPriorityHandler = (val) => {
         clickPriorityTaskHandler(val).then(() => {
             setOpen((open) => !open);
-            setPrio(val);
         })
     }
 
     return (
         <div className='Dropdown'>
-            <DropdownButton open={open} toggle={toggleDropdown} priority={prio} />
+            <DropdownButton open={open} toggle={toggleDropdown} priority={priority} />
             <DropdownContent open={open} clickHandler={clickPriorityHandler} />
         </div>
     )

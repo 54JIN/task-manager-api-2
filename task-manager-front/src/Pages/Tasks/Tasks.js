@@ -114,9 +114,10 @@ function Tasks () {
     }
     
     const clickTaskPriorityHandler = async (value) => {
-        let temp = task;
-        temp.priority = value;
-        setTask(temp)
+        setTask((prevTask) => ({
+            ...prevTask,
+            ['priority']: value
+        }))
     }
     
     const clickTaskHandler = async (taskId) => {
