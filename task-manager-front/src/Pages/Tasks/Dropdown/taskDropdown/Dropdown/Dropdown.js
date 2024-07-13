@@ -18,7 +18,7 @@ function Dropdown ({ priority, clickPriorityTaskHandler }) {
     }
 
     return (
-        <div className='Dropdown'>
+        <div className='Dropdown-Task'>
             <DropdownButton open={open} toggle={toggleDropdown} priority={priority} />
             <DropdownContent open={open} clickHandler={clickPriorityHandler} />
         </div>
