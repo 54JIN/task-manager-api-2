@@ -8,7 +8,7 @@
 
 .Header-Content {
     display: flex;
-    width: 75vw;
+    width: 50vw;
     justify-content: space-between;
 }
 
@@ -21,7 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 60vw;
+    width: 35vw;
     background-color: rgb(24, 24, 24);
     border-radius: 3vw;
 }

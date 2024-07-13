@@ -15,8 +15,8 @@ import './Home.css'
 
 function Home () {
     const [data, setData] = useState({totalTasks: 0, completed: 0, toDo: 0, weeklyStats: [ {label: 'Monday', completed: 24, incomplete: 4}, {label: 'Tuesday', completed: 13, incomplete: 2}, {label: 'Wednesday', completed: 14, incomplete: 3}, {label: 'Thursday', completed: 6, incomplete: 1}, {label: 'Friday', completed: 12, incomplete: 3}, {label: 'Saturday', completed: 15, incomplete: 7}, {label: 'Sunday', completed: 9, incomplete: 4} ]})
-    const [tasks, setTasks] = useState([{_id: 'dasada' , title: 'Finish Math Homework', completed: false, priority: 2}, {_id: 'dasfsaa', title: 'Workout', completed: true, priority: 1}, {_id: 'dasadasdas', title: 'Basketball practice at 9:30 a.m', completed: true, priority: 1}, {_id: 'dasadffwefwea', title: 'Piano lesson at 2:15 p.m', completed: false, priority: 1}, {_id: 'dasadag3wweg', title: 'Eat avocado toast', completed: false, priority: 0}, {_id: 'dasadajtyjtyjt', title: 'Gym', completed: false, priority: 0}])
-    // const [tasks, setTasks] = useState([])
+    // const [tasks, setTasks] = useState([{_id: 'dasada' , title: 'Finish Math Homework', completed: false, priority: 2}, {_id: 'dasfsaa', title: 'Workout', completed: true, priority: 1}, {_id: 'dasadasdas', title: 'Basketball practice at 9:30 a.m', completed: true, priority: 1}, {_id: 'dasadffwefwea', title: 'Piano lesson at 2:15 p.m', completed: false, priority: 1}, {_id: 'dasadag3wweg', title: 'Eat avocado toast', completed: false, priority: 0}, {_id: 'dasadajtyjtyjt', title: 'Gym', completed: false, priority: 0}])
+    const [tasks, setTasks] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(false)
     const [filter, setFilter] = useState(false)
@@ -147,7 +147,7 @@ function Home () {
 
     return (
         <div className='Home'>
-            <Header />
+            <Header navVal={1} />
             <div className='Home-Tasks-Content'>
                 <div className='Home-Tasks-Content-Welcome'>
                     <p>Welcome to Task Manager. Enjoy UserName!</p>

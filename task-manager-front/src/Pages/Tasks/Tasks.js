@@ -15,8 +15,8 @@ function Tasks () {
 
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(false)
-    const [tasks, setTasks] = useState([{_id: 'dasada' , description: 'Finish Math Homework', completed: false, priority: 2}, {_id: 'dasfsaa', description: 'Workout', completed: true, priority: 1}, {_id: 'dasadasdas', description: 'Basketball practice at 9:30 a.m', completed: true, priority: 1}, {_id: 'dasadffwefwea', description: 'Piano lesson at 2:15 p.m', completed: false, priority: 1}, {_id: 'dasadag3wweg', description: 'Eat avocado toast', completed: false, priority: 0}, {_id: 'dasadajtyjtyjt', description: 'Gym', completed: false, priority: 0}])
-    // const [tasks, setTasks] = useState([])
+    // const [tasks, setTasks] = useState([{_id: 'dasada' , description: 'Finish Math Homework', completed: false, priority: 2}, {_id: 'dasfsaa', description: 'Workout', completed: true, priority: 1}, {_id: 'dasadasdas', description: 'Basketball practice at 9:30 a.m', completed: true, priority: 1}, {_id: 'dasadffwefwea', description: 'Piano lesson at 2:15 p.m', completed: false, priority: 1}, {_id: 'dasadag3wweg', description: 'Eat avocado toast', completed: false, priority: 0}, {_id: 'dasadajtyjtyjt', description: 'Gym', completed: false, priority: 0}])
+    const [tasks, setTasks] = useState([])
     const [task, setTask] = useState({_id: '', title: '', description: '', dueDate: '', priority: 0})
 
     const navigate = useNavigate();
@@ -128,7 +128,7 @@ function Tasks () {
 
     return(
         <div className='AddTask'>
-            <Header />
+            <Header navVal={2} />
             <div className='AddTask-Subtitle'>
                 <p>Welcome to Task Manager. Enjoy UserName!</p>
             </div>
