@@ -33,7 +33,7 @@ function Home () {
                     }
                 }).then((response) => {
                     setData(response.data)
-                    console.log(response.data)
+                    // console.log(response.data)
                 })
                 await axios.get('/api/tasks', {
                     headers: {
@@ -73,7 +73,7 @@ function Home () {
                 }).then((response) => {
                     setTasks(response.data)
                     setTaskFilter(0)
-                    console.log(response.data)
+                    // console.log(response.data)
                 })
             } else {
                 await axios.get(`/api/tasks?completed=${filter === 'Completed'? 'true' : 'false'}`, {
@@ -87,7 +87,7 @@ function Home () {
                         setTaskFilter(2)
                     }
                     setTasks(response.data)
-                    console.log(response.data)
+                    // console.log(response.data)
                 })
             }
         } catch (e) {

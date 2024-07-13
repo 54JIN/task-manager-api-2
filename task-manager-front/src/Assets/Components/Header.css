@@ -50,18 +50,57 @@
 
 .Header-Profile {
     align-self: center;
+    display: relative;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    width: 11.5vw;
+}
+
+.Header-Profile-Buttons {
     display: flex;
     justify-content: space-between;
     width: 11.5vw;
 }
 
-.Header-Profile button {
+.Header-Profile-Buttons button {
     border: none;
     background: none;
     cursor: pointer;
 }
 
-.Header-Profile img {
+.Header-Profile-Buttons img {
     width: 4.7vw;
     object-fit: cover;
+}
+
+.Header-Profile-Dropdown-Inactive {
+    display: none;
+}
+
+.Header-Profile-Dropdown-Options {
+    position: absolute;
+    z-index: 1;
+    margin-top: 0.5vw;
+    width: 11.5vw;
+    background-color: black;
+    border: #e7fe55 solid;
+    border-radius: 1vw;
+}
+
+.Header-Profile-Dropdown-Options button {
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2vw;
+    text-align: start;
+    padding-left: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    color: white;
+}
+
+.Header-Profile-Dropdown-Options button:hover {
+    background-color: #4f4f4f;
+    border-radius: 1vw;
 }

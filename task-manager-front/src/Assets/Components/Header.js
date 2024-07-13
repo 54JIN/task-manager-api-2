@@ -12,6 +12,7 @@ import './Header.css'
 
 function Header ({ navVal }) {
     const [navActive, setNavActive] = useState(navVal);
+    const [open, setOpen] = useState(false);
 
     const navigate = useNavigate();
 
@@ -39,6 +40,10 @@ function Header ({ navVal }) {
         }
     }
 
+    const clickProfileIconHandle = async () => {
+        setOpen(!open)
+    }
+
     return (
         <div className='Header'>
             <div className='Header-Content'>
@@ -52,8 +57,14 @@ function Header ({ navVal }) {
                 </div>
             </div>
             <div className='Header-Profile'>
-                <Link key={Tasks} to='/tasks' ><button><img src={AddIcon} /></button></Link>
-                <button onClick={clickLogOutHandler}><img src={AvatarIcon} /></button>
+                <div className='Header-Profile-Buttons'>
+                    <Link key={Tasks} to='/tasks' ><button><img src={AddIcon} /></button></Link>
+                    <button onClick={clickProfileIconHandle} ><img src={AvatarIcon} /></button>
+                    {/* <button onClick={clickLogOutHandler}><img src={AvatarIcon} /></button> */}
+                </div>
+                <div className={`Header-Profile-Dropdown-Options ${!open? 'Header-Profile-Dropdown-Inactive' : null}`} >
+                    <button onClick={clickLogOutHandler}>Sign Out</button>
+                </div>
             </div>
         </div>
     )
