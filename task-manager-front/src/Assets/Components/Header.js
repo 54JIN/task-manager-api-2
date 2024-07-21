@@ -11,15 +11,13 @@ import AddIcon from '../Images/AddIcon.png'
 import './Header.css'
 
 function Header ({ navVal }) {
-    const [navActive, setNavActive] = useState(navVal);
     const [open, setOpen] = useState(false);
 
     const navigate = useNavigate();
 
-    const handleNavClick = (num) => {
-        setNavActive(num);
-    }
-
+    /* 
+        Objective: When the user requests to LogOut, request the server side to log the user out of the application, then clear the users token from the browser history.
+    */
     const clickLogOutHandler = async () => {
         try {
             await axios.post('/api/users/logout', 
@@ -40,6 +38,9 @@ function Header ({ navVal }) {
         }
     }
 
+    /* 
+        Objective: When the user clicks the profile button, change the status to the opposit of current: open or closed. 
+    */
     const clickProfileIconHandle = async () => {
         setOpen(!open)
     }
@@ -51,9 +52,9 @@ function Header ({ navVal }) {
                     <h1>Task Manager</h1>
                 </div>
                 <div className='Header-Navigations'>
-                    <Link key={Home} to='/home' ><button className={navActive === 1? 'Nav-Active' : 'Nav-Inactive'} >Overview</button></Link>
-                    <Link key={Tasks} to='/tasks' ><button className={navActive === 2? 'Nav-Active' : 'Nav-Inactive'} >Tasks</button></Link>
-                    <Link key={Home} to='/home' ><button className={navActive === 3? 'Nav-Active' : 'Nav-Inactive'} >Statistics</button></Link>
+                    <Link key={Home} to='/home' ><button className={navVal === 1? 'Nav-Active' : 'Nav-Inactive'} >Overview</button></Link>
+                    <Link key={Tasks} to='/tasks' ><button className={navVal === 2? 'Nav-Active' : 'Nav-Inactive'} >Tasks</button></Link>
+                    <Link key={Home} to='/home' ><button className={navVal === 3? 'Nav-Active' : 'Nav-Inactive'} >Statistics</button></Link>
                 </div>
             </div>
             <div className='Header-Profile'>

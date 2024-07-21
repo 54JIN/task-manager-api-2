@@ -11,6 +11,9 @@ function SignUp() {
     const [error, setError] = useState(false)
     const navigate = useNavigate()
 
+    /* 
+        Objective: When the user inputs a value in the form, update the state of the value.
+    */
     const handleChange = (evt) => {
         const { name, value } = evt.target
         setFormData((prevData) => ({
@@ -19,6 +22,9 @@ function SignUp() {
         }))
     }
 
+    /* 
+        Objective: When the user submits the form to signup to the application, request the server for the creation of the account, and if true, set the token to the browsers local storage.
+    */
     const clickHandler = async () => {
         try {
             const response = await axios.post(`/api/users`, {

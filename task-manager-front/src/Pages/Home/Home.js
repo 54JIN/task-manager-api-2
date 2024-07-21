@@ -23,10 +23,22 @@ function Home () {
     const [taskFilter, setTaskFilter] = useState(0)
     const navigate = useNavigate();
 
+
+    /* 
+        Objective: Before the page is loaded, request the server side for the users 
+            - weekly status for tasks 
+            - the amount of tasks created 
+            - the amount of tasks completed
+            - the amount of tasks to be completed
+            - a list of all tasks to be viewed.
+    */
     useEffect(() => {
         const fetchData = async () => {
             try{
                 setIsLoading(true)
+                /* 
+                    Objective: the path '/api/projects' should return the users weekly status, total tasks, completed tasks, and toDo tasks
+                */
                 await axios.get('/api/projects', {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
@@ -35,6 +47,9 @@ function Home () {
                     setData(response.data)
                     // console.log(response.data)
                 })
+                /* 
+                    Objective: the path '/api/tasks' should return all the tasks the user has created. 
+                */
                 await axios.get('/api/tasks', {
                     headers: {
                         Authorization: `Bearer ${window.localStorage.getItem('token').replace('"', '').replace('"', '')}`
@@ -44,7 +59,9 @@ function Home () {
                     // console.log(response.data)
                 })
             } catch (e) {
-                // console.log(e)
+                /* 
+                    Objective: In the case of an error, log the user out and remove any tokens associated within the cookies of the browser.
+                */
                 if(window.localStorage.getItem('token') === null) {
                     window.localStorage.removeItem('token')
                     window.localStorage.removeItem('name')
@@ -63,6 +80,9 @@ function Home () {
         fetchData();
     }, [setData])
 
+    /* 
+        Objective: When the user filters for tasks via All or Completed or Incomplete, request the server side for tasks of the nature of filteration, then display the filtered tasks to the user.
+    */
     const clickTaskHandler = async (filter) => {
         try{
             if(filter === 'All'){
@@ -95,6 +115,9 @@ function Home () {
         }
     }
 
+    /* 
+        Objective: When the status of completed vs incompleted has changed for a perticular task, update the priority level on the server side, then update the state of the application to display the change.
+    */
     const clickTaskStatusHandler = async (taskId, value) => {
         try {
             await axios.patch(`/api/tasks/${taskId}`, { completed: !value }, {
@@ -110,6 +133,9 @@ function Home () {
         }
     }
     
+    /* 
+        Objective: When a priority has been changed by the user for a perticular task, update the priority level on the server side, then update the state of the application to display the change. 
+    */
     const clickTaskPriorityHandler = async (taskId, value) => {
         try {
             await axios.patch(`/api/tasks/${taskId}`, { priority: value }, {
@@ -124,11 +150,17 @@ function Home () {
             setError(true)
         }
     }
-    
+
+    /* 
+        Objective: When the filter button is clicked, help change the display status - open or not open. 
+    */
     const clickFilterStatusHandler = () => {
         setFilter(!filter)
     }
 
+    /* 
+        Objective: During the process in which the server side is being requested for data at the initail state, render a loading screen for the users convenince of mind.
+    */
     if(isLoading) {
         return (
             <div>
@@ -137,13 +169,16 @@ function Home () {
         )
     }
 
-    // if(error) {
-    //     return (
-    //         <div>
-    //             <h1>Something Went Wrong! Please Try again.</h1>
-    //         </div>
-    //     )
-    // }   
+    /* 
+        Objective: In the case of an error, instead of showing the user the Overview, display an error screen 
+    */
+    if(error) {
+        return (
+            <div>
+                <h1>Something Went Wrong! Please Try again.</h1>
+            </div>
+        )
+    }   
 
     return (
         <div className='Home'>
@@ -243,16 +278,6 @@ function Home () {
                                 <div key={task._id} className='Home-Diagrams-Tasks-Content-Task'>
                                     <p>{task.title}</p>
                                     <div className='Home-Diagrams-Tasks-Content-Task-Information'>
-                                        {/* <Dropdown 
-                                            buttonText={task.priority === 2 ? "High" : `${task.priority === 1 ? 'Medium': 'Low'}`}
-                                            content={
-                                                <>
-                                                    <DropdownItem onClick={clickTaskPriorityHandler(task._id, 2)}>{'High'}</DropdownItem>
-                                                    <DropdownItem onClick={clickTaskPriorityHandler(task._id, 1)}>{'Medium'}</DropdownItem>
-                                                    <DropdownItem onClick={clickTaskPriorityHandler(task._id, 0)}>{'Low'}</DropdownItem>
-                                                </>
-                                            }
-                                        /> */}
                                         <Dropdown priority={task.priority} id={task._id} clickPriorityTaskHandler={clickTaskPriorityHandler} />
                                         <button className={`${task.completed? "Home-Diagrams-Tasks-Content-Task-Completed" : "Home-Diagrams-Tasks-Content-Task-Incomplete"}`} onClick={() => clickTaskStatusHandler(task._id, task.completed)}></button>
                                     </div>

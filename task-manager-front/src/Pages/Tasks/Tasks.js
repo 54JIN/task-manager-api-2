@@ -21,6 +21,9 @@ function Tasks () {
 
     const navigate = useNavigate();
 
+    /* 
+        Objective: Before the page is loaded, request the server side for all the users tasks.
+    */
     useEffect(() => {
         const fetchData = async () => {
             try{
