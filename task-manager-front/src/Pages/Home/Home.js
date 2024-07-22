@@ -14,7 +14,7 @@ import RedirectImg from '../../Assets/Images/Arrow.png'
 import './Home.css'
 
 function Home () {
-    const [data, setData] = useState({totalTasks: 0, completed: 0, toDo: 0, weeklyStats: [ {label: 'Monday', completed: 24, incomplete: 4}, {label: 'Tuesday', completed: 13, incomplete: 2}, {label: 'Wednesday', completed: 14, incomplete: 3}, {label: 'Thursday', completed: 6, incomplete: 1}, {label: 'Friday', completed: 12, incomplete: 3}, {label: 'Saturday', completed: 15, incomplete: 7}, {label: 'Sunday', completed: 9, incomplete: 4} ]})
+    const [data, setData] = useState({totalTasks: 0, completed: 0, overDueTask: 0, toDo: 0, weeklyStats: [ {label: 'Monday', completed: 24, incomplete: 4}, {label: 'Tuesday', completed: 13, incomplete: 2}, {label: 'Wednesday', completed: 14, incomplete: 3}, {label: 'Thursday', completed: 6, incomplete: 1}, {label: 'Friday', completed: 12, incomplete: 3}, {label: 'Saturday', completed: 15, incomplete: 7}, {label: 'Sunday', completed: 9, incomplete: 4} ]})
     // const [tasks, setTasks] = useState([{_id: 'dasada' , title: 'Finish Math Homework', completed: false, priority: 2}, {_id: 'dasfsaa', title: 'Workout', completed: true, priority: 1}, {_id: 'dasadasdas', title: 'Basketball practice at 9:30 a.m', completed: true, priority: 1}, {_id: 'dasadffwefwea', title: 'Piano lesson at 2:15 p.m', completed: false, priority: 1}, {_id: 'dasadag3wweg', title: 'Eat avocado toast', completed: false, priority: 0}, {_id: 'dasadajtyjtyjt', title: 'Gym', completed: false, priority: 0}])
     const [tasks, setTasks] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -152,13 +152,6 @@ function Home () {
     }
 
     /* 
-        Objective: When the filter button is clicked, help change the display status - open or not open. 
-    */
-    const clickFilterStatusHandler = () => {
-        setFilter(!filter)
-    }
-
-    /* 
         Objective: During the process in which the server side is being requested for data at the initail state, render a loading screen for the users convenince of mind.
     */
     if(isLoading) {
@@ -211,7 +204,7 @@ function Home () {
                                 <p>Overdue</p>
                                 <p>Task</p>
                             </div>
-                            <h2>3</h2>    
+                            <h2>{data.overDueTask}</h2>    
                         </div>
                         <div className='Home-Tasks-Specifics-Redirects'>
                             <button><img src={RedirectImg} alt="Overdue Task Button" /></button>
@@ -270,7 +263,7 @@ function Home () {
                                 </div>
                             </div>
                             <div className='Home-Diagrams-Tasks-Header-Right-Aligned'>
-                                <button onClick={() => clickFilterStatusHandler()} className={filter? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>Filters</button>
+                                <button onClick={() => setFilter(!filter)} className={filter? 'Home-Diagrams-Tasks-Header-Filters-Button-Active' : 'Home-Diagrams-Tasks-Header-Filters-Button-Inactive'}>Filters</button>
                             </div>
                         </div>
                         <div className='Home-Diagrams-Tasks-Content'>
