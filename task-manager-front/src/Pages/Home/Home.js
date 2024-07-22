@@ -165,13 +165,13 @@ function Home () {
     /* 
         Objective: In the case of an error, instead of showing the user the Overview, display an error screen 
     */
-    if(error) {
-        return (
-            <div>
-                <h1>Something Went Wrong! Please Try again.</h1>
-            </div>
-        )
-    }   
+    // if(error) {
+    //     return (
+    //         <div>
+    //             <h1>Something Went Wrong! Please Try again.</h1>
+    //         </div>
+    //     )
+    // }   
 
     return (
         <div className='Home'>

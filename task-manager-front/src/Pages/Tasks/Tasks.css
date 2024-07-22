@@ -132,6 +132,17 @@
     cursor: pointer;
 }
 
+.AddTask-Content-Edit-Title button:active {
+    background-color: #e7fe55;
+    border: #e7fe55 solid;
+    border-radius: 2vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    color:black;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
 .AddTask-Content-Edit-Details {
     display: flex;
     flex-direction: column;
